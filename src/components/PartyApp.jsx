@@ -14,15 +14,11 @@ const LandingPage = ({ onEnter, show }) => {
         </h1>
         
         <div className="text-lg mb-6">
-          Will they show up? Use the power of the Poisson distribution to predict party attendance in real-time.
+          Hullo, welcome to a project for a very anxious friend of mine (you know who you are).
         </div>
 
         <div className="text-gray-400 mb-4 text-sm">
-          Input your expected guest count and party duration, then track arrivals to see how your party is performing against predictions.
-        </div>
-
-        <div className="text-gray-400 mb-8 text-sm italic">
-          Perfect for party planners, event hosts, and anyone who's ever wondered "how many people will actually show up?"
+          Using Bayesian calculation and the Poisson distribution, see what the intro stats says about the state of your social circle!
         </div>
 
         <button
