@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+"homepage": "https://osmkhan.github.io/poisson-party-predictor",
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "predeploy": "vite build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
