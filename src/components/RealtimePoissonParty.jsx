@@ -317,22 +317,20 @@ const RealtimePoissonParty = () => {
                     </form>
                   ) : (
                     <div className="flex items-center gap-3">
-                      <div className="flex flex-col gap-1">
-                        <button
-                          onClick={() => incrementMinutes(15)}
-                          className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
-                          title="Add 15 minutes"
-                        >
-                          +15 mins
-                        </button>
-                        <button
-                          onClick={() => incrementMinutes(1)}
-                          className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
-                          title="Add 1 minute"
-                        >
-                          +1 min
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => incrementMinutes(-15)}
+                        className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
+                        title="Subtract 15 minutes"
+                      >
+                        -15 mins
+                      </button>
+                      <button
+                        onClick={() => incrementMinutes(-1)}
+                        className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
+                        title="Subtract 1 minute"
+                      >
+                        -1 min
+                      </button>
                       <span
                         onClick={handleTimeClick}
                         className="cursor-pointer hover:text-violet-300 transition-colors px-4"
@@ -340,22 +338,20 @@ const RealtimePoissonParty = () => {
                       >
                         {formatTime(elapsedMinutes)}
                       </span>
-                      <div className="flex flex-col gap-1">
-                        <button
-                          onClick={() => incrementMinutes(-1)}
-                          className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
-                          title="Subtract 1 minute"
-                        >
-                          -1 min
-                        </button>
-                        <button
-                          onClick={() => incrementMinutes(-15)}
-                          className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
-                          title="Subtract 15 minutes"
-                        >
-                          -15 mins
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => incrementMinutes(1)}
+                        className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
+                        title="Add 1 minute"
+                      >
+                        +1 min
+                      </button>
+                      <button
+                        onClick={() => incrementMinutes(15)}
+                        className="px-3 py-2 text-base bg-violet-500/20 text-violet-300 rounded hover:bg-violet-500/30 transition-colors"
+                        title="Add 15 minutes"
+                      >
+                        +15 mins
+                      </button>
                     </div>
                   )}
                   <span className="text-sm text-gray-400 ml-2">
@@ -407,8 +403,31 @@ const RealtimePoissonParty = () => {
           <BarChart width={600} height={300} data={getPredictionData()}
                     style={{backgroundColor: '#1F2937'}}>
             <CartesianGrid strokeDasharray="3 3" stroke="#374151"/>
-            <XAxis dataKey="additional" stroke="#9CA3AF"/>
-            <YAxis stroke="#9CA3AF"/>
+            <XAxis dataKey="additional" stroke="#9CA3AF">
+              <text
+                x={300}
+                y={295}
+                textAnchor="middle"
+                fill="#9CA3AF"
+                fontSize="16"
+                fontWeight="bold"
+              >
+                Additional Arrivals (k)
+              </text>
+            </XAxis>
+            <YAxis stroke="#9CA3AF">
+              <text
+                x={-150}
+                y={15}
+                transform="rotate(-90)"
+                textAnchor="middle"
+                fill="#9CA3AF"
+                fontSize="16"
+                fontWeight="bold"
+              >
+                Probability (%)
+              </text>
+            </YAxis>
             <Tooltip 
               contentStyle={{backgroundColor: '#1F2937', border: '1px solid #374151'}}
               labelStyle={{color: '#9CA3AF'}}
