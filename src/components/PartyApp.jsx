@@ -14,15 +14,15 @@ const LandingPage = ({ onEnter, show }) => {
         </h1>
         
         <div className="text-lg mb-6">
-          Hullo, welcome to a project for a very anxious friend of mine - you know who you are.
+          Hello. This is a project for a very anxious friend - you know who you are.
         </div>
 
         <div className="text-gray-400 mb-4 text-sm">
-          Using Bayesian calculation and the Poisson distribution, see what the intro stats says about the state of your social circle!
+          Using Bayesian calculation and the Poisson distribution, see what intro-level statistics says about the state of your social circle!
         </div>
 
         <div className="text-gray-400 mb-8 text-sm italic">
-          Perfect for answering the dark internal questions that occur in the moment before the bell rings.
+          Perfect for answering the dark internal questions that occur in the moment before the doorbell rings.
         </div>
 
         <button
